@@ -1,0 +1,53 @@
+> Pydantic Logfire is an observability platform that helps developers monitor, trace, debug, and understand what is happening inside their Python and AI applications.
+
+It is developed by the team behind Pydantic and is built on OpenTelemetry, an open standard for collecting observability data.
+
+Just like LangSmith helps us observe LangChain and LangGraph applications, Pydantic Logfire helps us observe AI applications as well as traditional Python applications, APIs, and databases.
+1. Why was Pydantic Logfire developed?
+Imagine you have developed an AI application using:
+- FastAPI for backend APIs.
+- LangGraph for agent orchestration.
+- Groq or Gemini for LLM calls.
+- SQL Database for retrieving information.
+- Pydantic for data validation.
+A user asks a question, but your application takes 15 seconds to respond.
+
+Now you don't know whether the delay is coming from the database, LLM, API, or agent execution.
+
+Pydantic Logfire helps you observe these different components from a single platform
+
+The main purpose of Logfire is to make it easier to understand the internal behavior of an entire application.
+----------------------------------------------------------------------------------------
+What does Pydantic Logfire contain?
+
+Component	- What it does	- Example
+Logs	 - Records events	- Database connected successfully
+Traces	- Tracks an entire request	- API → Agent → Database → LLM
+Spans	- Tracks individual operations	- LLM call took 5 seconds
+Metrics	- Measures performance	Average latency, error rate
+- Instrumentation	Connects applications to observability	Automatically tracing FastAPI requests
+Alerting	- Notifies you about configured problems	- High application error rate
+-----------------------------------------------------------------------------------------
+What are Traces and Spans?
+These are two particularly important concepts in Logfire.
+
+Trace: The complete journey of a request.
+
+Span: An individual operation within that journey.
+
+For example, a user asks: "Why is my invoice payment delayed?"
+
+The entire 10-second execution is a Trace, and each individual operation is a Span.
+------------------------------------------------------------------------------------------
+LLM Tracing 
+
+> Langsmith is good for tracing how the messages are flowing between our agents 
+> In the Pydantic Logfire we can see how the application flow is flowing 
+-------------------------------------------------------------------------
+Pydantic vs Pydantic AI vs Pydantic Logfire
+
+These are three different things. Don't get confused by their names.
+ 
+Pydantic	- Data validation and structured data
+Pydantic AI - 	Building AI agents
+Pydantic Logfire -	Monitoring, tracing, and debugging applications
