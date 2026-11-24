@@ -1,1 +1,93 @@
+Observability means understanding what is happening inside your AI application while it is running.
 
+Imagine you have built an AI chatbot using LangGraph and Groq.
+
+You ask: "What is the capital of India?"
+
+Your chatbot replies: "New Delhi." Everything looks fine.
+
+But imagine you ask: "Find the latest sales report, analyze the revenue, and explain why sales decreased."
+
+The chatbot takes 20 seconds and gives an incorrect answer.
+
+Now you want to know:
+- Why did it take 20 seconds?
+- Which AI agent was responsible?
+- Did the LLM generate an incorrect answer?
+- Did the database return incorrect data?
+- How many tokens were consumed?
+- How much did the execution cost?
+
+Observability helps you investigate all these questions.
+-----------------------------------------------------------------------
+1. Real-life example
+Imagine ordering food through Swiggy or Zomato.
+
+You can track the order:
+1. Order placed - Your request has been received.
+2. Restaurant preparing food - The restaurant is working on your order.
+3. Delivery partner assigned - The delivery process has started.
+4. Out for delivery - You can track its progress.
+5. Delivered - The order is complete.
+
+If the order is delayed, you can identify which stage caused the delay.
+
+Similarly, observability allows you to track each step of an AI agent's execution.
+-------------------------------------------------------------------------
+5 pillars of observability
+
+Traditional software observability is commonly built around three pillars:
+
+1. Logs — What happened?
+
+Logs record events such as agent execution, tool calls, errors, and responses.
+Example: SQL Tool executed successfully.
+
+2. Metrics — How is the application performing?
+
+Metrics measure values such as latency, token usage, error rate, and cost.
+Example: Average response time = 4.2 seconds.
+
+3. Traces — How did the request travel through the system?
+Traces show the sequence and timing of operations.
+
+4.User Feedback - wht do users think
+
+> Explict Feedback
+> Rating/Comments
+> Upvotes/Downvotes
+> Helpful/Not helpful
+
+5.Evaluation Signals - How Good is our AI?
+
+> Hallucination Detection
+> Faithfullness/Groundness
+> Answer Relevance
+> Context Recall/Precision
+> Safety/Toxicity Scores
+
+
+Example: User → Supervisor → SQL Agent → LLM → Final Answer.
+For AI applications, we also observe answer quality, hallucinations, tool correctness, and evaluation scores.
+
+Monitoring tells you something is wrong.
+Observability helps you understand what happened and why.
+Debugging is the process of finding and fixing the problem.
+----------------------------------------------------------------------------
+Observability using LangSmith
+LangSmith is commonly used to observe LangChain and LangGraph applications.
+
+It can help you inspect:
+- Inputs and outputs of LLM calls
+- Agent and tool execution traces
+- Token usage and latency
+- Errors and failures
+- Evaluation results
+-------------------------------------------------------------------------
+Tools for Observability
+
+Langsmith (Tracing,Logs,Evals)
+Pydantic Logsfire 
+Grafana (Metrics,Dashboard,Alerts)
+Helicone(Logging,Metrics,Cost Tracking)
+LangFuse(Observability for LLM Apps)
